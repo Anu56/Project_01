@@ -1,0 +1,249 @@
+@font-face{
+    font-family: myfont;
+    src: url("calligraphy.zip");
+
+}
+*{
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    font-family:myfont;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+     z-index: 99;
+}
+body{
+      background-image: url("moon.jpg");
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+      min-height: 100vh;
+      
+}
+.panel-1{
+    margin-left: 2px;
+    display: flex;
+    font-size: 2em;
+    user-select: none;
+    color: #fff;
+}
+.navigation a{
+    margin-left: 40px;
+    justify-content: space-between;
+    width: 50%;
+    font-weight: 500px;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #fff;   
+    position: relative;
+    font-size: 1.1em;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform.5s;
+    transform-origin: right;
+
+}
+.navigation a:hover::after{
+    transform-origin: left;
+    color: #fff;
+    transform: scaleX(1);
+}
+.btn{
+    width: 110px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500px;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+.btn:hover{
+    background-color: #fff;
+    color: #162938;
+
+}
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    color:#fff;
+    border-radius: 20px;
+    padding: 30px 40px;
+    backdrop-filter: blur(25px);
+    background: transparent;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, .5);
+    box-shadow: 0 0 30px rgba(0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    transition:transform .5s ease ,height .2s ease;
+    overflow: hidden;
+    transform: scale(0);
+}
+ .wrapper.active-popup{
+    transform: scale(1);
+}
+.wrapper .form-login{
+    width: 100%;
+    padding: 20px;
+}
+.wrapper.form-register{
+    width: 100%;
+    padding: 40px;
+    color: #fff;
+}
+.form-register ,.remeber-me{
+    color: #fff;
+}
+
+.wrapper .active{
+    height: 520px;
+}
+.wrapper h1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500px;
+}
+.form-register h1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500px;
+    color: #fff;
+}
+.input-box{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+   position: relative;
+}
+
+.input-box input{
+    height:100% ;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 17px;
+     color: #fff;
+     padding: 20px 45px 20px 20px;
+}
+
+.input-box i {
+    position:absolute ;
+    right: 20px;
+    top: 45%;
+    transform: translate(-50%);
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+}
+.input-box input::placeholder{
+    color: #fff;
+}
+.remeber-me{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+     margin: -15px 0 15px ;
+}
+.remeber-me label input{
+    accent-color: #fff;
+    margin-right: 4px;
+}
+.remeber-me a{
+    color: #fff;
+    text-decoration: none;
+}
+.remeber-me a:hover{
+    text-decoration: underline;
+}
+.sbmt-btn{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0, .1);
+    cursor: pointer;
+    font-size: 17px;
+    color: #333;
+    font-weight: 650px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.register-box{
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px ;
+}
+.register-box p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-box p a:hover {
+    text-decoration: underline;
+}
+ /*.sbmt-btn:hover{
+    background-color: #fff;
+    color: #162938;
+}*/
+.wrapper .form-login{
+   transform: translateX(0);
+   transition: transform .18s ease;
+}
+   .active .form-login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper .form-register{
+    position: absolute;
+    transform: translateX(400px);
+    transition: none;
+
+   
+}
+.active .form-register{
+    transform: translateX(0);
+   transition: transform .18s ease;
+}
+
+
+
+
